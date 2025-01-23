@@ -1,0 +1,9 @@
+Programa básico que gestiona la compra de productos de una frutería:
+
+1. Indicar la cantidad de unidades que hay de cada fruta.
+2. Añadimos los precios aunque no se utilicen de momento
+3. Solicitar al usuario que indique cuantas unidades de cada fruta quiere.
+4. Mostrar por pantalla la cantidad final de frutas que queda.
+
+
+*!Atención! Este ejercicio es de iniciación y no contempla ni las excepciones ocurridas por el ingreso incorrecto de caracteres por el usuario, en ejercicios posteriores se tendrá en cuenta
