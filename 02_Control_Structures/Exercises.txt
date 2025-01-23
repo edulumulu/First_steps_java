@@ -1,0 +1,13 @@
+Estructuras básicas de control. 
+
+1.1.Solicitar al usuario que introduzca dos valores (double). Se controla que estos valores sean positivos utilizando la estructura de control if-else en combinación con un bucle do-while.
+1.2.Creo un menú mediante otro bucle do-while en combinación con switch para que el usuario pueda elegir que operación quiere realizar.
+•	1 - Sumar los valores
+•	2 - Restar los valores
+•	3 - Multiplicar los valores
+•	4 - Dividir los valores
+
+1.3.	Si el usuario pulsa la opción 0 el programa se cerrará y mostrará un mensaje de despedida.
+
+2.	Ejercicio2. Control de errores.
+2.1. Ejercicio anterior evitando error de introducción de caracter mediante un try-catch (vuelve a mostrar el menú para que el usuario pueda continuar) 
