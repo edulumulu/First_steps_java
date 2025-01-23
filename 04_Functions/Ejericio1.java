@@ -1,25 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package com.mycompany.actividad3uf2;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
  *
- * @author eduardolucasmunozdelucas
+ * @author edulumulu
  */
 public class Ejericio1 {
 
-    /*
-    *Creo una función para cada vez que tenga que solicitar un numero por teclado.
-    *La función permite decidir que texto mostrar por pantalla y retorna un valor entero.
-    *También contemplo la excepción de que introduzcan un formato erróneo con un try-catch
-    y restando una iteración en caso de error para que el bucle for vuelva a solicitar el numero.    
-    */
-    
+    /**
+     * Solicita número al usuario por consola controlando que no sea otro caracter.
+     * @param texto --> texto que se mostrará para solicitar el número
+     * @return 
+     */
     public static int introduceNumeroEntero(String texto) {
         int num = 0;
         Scanner sc = new Scanner(System.in);
@@ -33,132 +25,152 @@ public class Ejericio1 {
                 i--;
             }
         }
-
         return num;
     }
 
-    /*
-    *Creo una función para mostrar por pantalla el tipo de menú que desée pudiendo introducir diferentes
-    cadenas de texto.
-    En este caso no hay valor de retorno solo muestra por pantalla los distientos mensajes.
-    */
+    /**
+     * Crear un menú a partir de distintas cadenas de texto
+     * @param texto --> Cada cadena de texto se muestra en una linea
+     */
     public static void mostrarMenu(String... texto) {
         for (String t : texto) {
             System.out.println(t);
         }
     }
     
-    /*
-    *Creo 5 funciones de operaciones matemáticas en las que se les llama con dos valores y retorna una numero
-    */
+    /**
+     * Suma parámetro a y b y devuelve el resultado
+     * @param a
+     * @param b
+     * @return 
+     */
     public static int sumar(int a, int b) {
         int suma = a + b;
         return suma;
     }
-
+    
+    /**
+     * Resta el número a menos b y devuelve el resultado
+     * @param a
+     * @param b
+     * @return 
+     */
     public static int restar(int a, int b) {
         int resta = a - b;
         return resta;
     }
 
+    /**
+     * Divde el número a entre el número b y devuelve el resultado. el número b no puede ser 0.
+     * @param a
+     * @param b
+     * @return 
+     */
     public static double dividir(int a, int b) {
-        if (b == 0) {       //Estructura if para contemplar si el dividendo es 0 o no
-        System.out.println("Error: División entre cero."); //Contemplo la opción de que el dividendo sea 0 
-        return Double.NaN;  //En cuyo caso retorna un mensaje de no es un numero (Not a NUmber).
-    } else {                //Si el dividendo no es 0 retorna el resultado
-        double divi = (double) a / b;
-        return divi;
+        if (b == 0) {       
+            System.out.println("Error: División entre cero."); 
+            return Double.NaN;  
+        } else {                
+            double divi = (double) a / b;
+            return divi;
+        }
     }
 
-    }
-
+    /**
+     * Multiplica el los dos números (a y b)
+     * @param a
+     * @param b
+     * @return 
+     */
     public static int multiplicar(int a, int b) {
         int x = a * b;
         return x;
     }
 
+    /**
+     * Realiza la potencia del primer número elevado al segundo
+     * @param a
+     * @param b
+     * @return 
+     */
     public static double potencia(int a, int b) {
         double potencia = Math.pow(a, b);
         return potencia;
     }
 
-    /*
-    *En el metodo principal llamo a las distintas funciones creadas anteriormente para evitar escribir 
-    (en algunos casos) repetidas veces el código
-    */
+    /**
+     * Mostrar números por pantalla
+     * @param a
+     * @param b 
+     */
+    public static void mostrarNumeros(int a, int b){
+         System.out.println("Valor a --> " + a);    
+         System.out.println("Valor b --> " + b);
+    }
+
+    
     public static void main(String[] args) {
-         boolean correcto = true;   //Creo una variable booleana para utilizar en los bucles do while
-        int a, b, opcion;           //Creo las variables enteras que se utilizarán para los numeros introducidos por el usuario
-        
-        /*
-        *Hago dos bucles do while, uno por si quiere volver a escribir dos numeros con los que realizar operaciones
-        y otro por si quiere realizar distintas operaciones con los 2 mismos numeros.
-        */
+        boolean correcto = true;       //Creo una variable booleana para utilizar en los bucles do while
+        int a, b, opcion;              //Creo las variables enteras que se utilizarán para los numeros introducidos por el usuario
+   
+        // Bucle que incorpora la solicitud de dos números con los que realizar las operaciones
         do {
-            a = introduceNumeroEntero("Introduce un número:");   //Llamo a la función de introducir entero a con el texto que quiero mostrar
-            b = introduceNumeroEntero("Introduce un segundo número:"); //Llamo a la función de introducir entero b con el texto que quiero mostrar
+            a = introduceNumeroEntero("Introduce un número:");   
+            b = introduceNumeroEntero("Introduce un segundo número:"); 
+            
+            // Bucle para realizar varias operaciones con los mismos números
             do {
-                System.out.println(" ");  //Cuestion de estéica visual para que no haya muchas lineas de texto seguidas
-                 //Muestro el menú y elijo lo que quiero mostrar en cada linea
+                System.out.println(" ");  
+                
+                // Llamo a lafunción de escribir un menú
                 mostrarMenu("Opciones: ", "1: Sumar", "2: Restar", "3: Dividir", "4: Multiplicar", "5: Potencia", "6: Salir del programa");
                 System.out.println(" ");
-                opcion = introduceNumeroEntero("Elige una opción");     //LLamo a la función de introducir un numero (referencia a el menú mostrado)
+                opcion = introduceNumeroEntero("Elige una opción");     
 
                 /*
                 *Estructura switch para contemplar las opciones validas y que mostrar por pantalla en cada elección.
-                *En cada case llamo a una función matemática creada anteriormente, y pregunto si quieren seguir realizando 
+                *En cada case llamo a una función matemáticadistinta, y pregunto si quieren seguir realizando 
                 más operaciones
                 */
                 switch (opcion) {   
                     case 1 -> {
-                        System.out.println("Valor a --> " + a);     //Yo haría solo loa linea116, pero el enunciado ide que mostremos cada variable (a y b)
-                        System.out.println("Valor b --> " + b);
+                        mostrarNumeros(a,b);
                         System.out.println("la suma de " + a + " + " + b + " es --> " + sumar(a, b));
-                        System.out.println("¿Quieres realizar otra operación o salir del programa?");
                     }
                     case 2 -> {
-                        System.out.println("Valor a --> " + a);
-                        System.out.println("Valor b --> " + b);
+                        mostrarNumeros(a,b);
                         System.out.println("la resta de " + a + " - " + b + " es --> " + restar(a, b));
-                        System.out.println("¿Quieres realizar otra operación o salir del programa?");
                     }
                     case 3 -> {
-                        System.out.println("Valor a --> " + a);
-                        System.out.println("Valor b --> " + b);
+                        mostrarNumeros(a,b);
                         System.out.println("la división de " + a + " / " + b + " es --> " + dividir(a, b));
-                        System.out.println("¿Quieres realizar otra operación o salir del programa?");
                     }
                     case 4 -> {
-                        System.out.println("Valor a --> " + a);
-                        System.out.println("Valor b --> " + b);
+                         mostrarNumeros(a,b);
                         System.out.println("la multiplicación de " + a + " x " + b + " es --> " + multiplicar(a, b));
-                        System.out.println("¿Quieres realizar otra operación o salir del programa?");
                     }
                     case 5 -> {
-                        System.out.println("Valor a --> " + a);
-                        System.out.println("Valor b --> " + b);
+                        mostrarNumeros(a,b);
                         System.out.println("la potencia de " + a + " elevado a " + b + " es --> " + potencia(a, b));
-                        System.out.println("¿Quieres realizar otra operación o salir del programa?");
                     }
                     case 6 -> {
                         System.out.println("Gracias por participar.");
-                        correcto = false;   //En el caso de escoger la opción 6 modifico la variable booleana correcto a falso para salir del bucle
+                        correcto = false;   //Modifico la variable booleana correcto a falso para salir del bucle
                     }
                     default -> System.out.println("Opcion no válida, vuelve a intentarlo");
                 }
-            } while (correcto);     //El bucle se repetirá salvo que la variable booleana correcto cambie a falso
-            
-            /*
-            *Repito la estructura del bucle anterior mostrando al usuario un menú en el que se le da la opción de elegir
-            otros dos numeros o salir de la aplicación.
-            *En caso de elegir la opción 1 repite el programa entero.
-            *En caso de elegir la 2 sale del programa.
-            */
+
+                 System.out.println("¿Quieres realizar otra operación o salir del programa?");
+                
+            } while (correcto);     
+
+            //Pregnuto si el usuario quiere introducir nuevos números o salir del programa
             System.out.println(" ");    
             mostrarMenu("¿¿Qué quieres hacer ahora?", "1: introducir dos numeros nuevos.", "2: Salir del programa.");
             System.out.println(" ");
             int opcion2 = introduceNumeroEntero("Elije entre la opción 1 y 2:"); //
-            
+
+            // Estructura de control de flujo
             switch (opcion2) {
                 case 1 -> correcto= true;
                 case 2 -> { 
@@ -172,7 +184,5 @@ public class Ejericio1 {
             }
             
         } while (correcto);
-        
-
     }
 }
