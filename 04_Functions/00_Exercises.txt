@@ -1,0 +1,10 @@
+Functions
+
+EJERCICIO 1: Proyecto con métodos estáticos para realizar operaciones matemáticas básicas:
+•	sumar: Devuelve la suma de dos números enteros.
+•	restar: Devuelve la resta de dos números enteros.
+•	multiplicar: Devuelve el producto de dos números enteros.
+•	dividir: Devuelve el resultado de la división del primer número entre el segundo.
+•	potencia: Devuelve el primer número elevado a la potencia del segundo.	
+
+1.1. Menú para que el usuario pueda elegir qué operación quiere realizar, entre ellas salir y cerrar el programa.
