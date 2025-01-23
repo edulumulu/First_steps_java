@@ -46,6 +46,7 @@ public class Ejercicio2 {
 
         do {
             //Estructura de control que controla la excepcion InputMismatchException
+            
             try {
                 System.out.println(" ");
                 System.out.println("Elige una de eestas opciones: ");
