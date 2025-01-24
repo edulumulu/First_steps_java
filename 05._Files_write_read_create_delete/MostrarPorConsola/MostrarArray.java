@@ -1,14 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package MostrarPorConsola;
 
 /**
  *
- * @author eduardolucasmunozdelucas
+ * @author edulumulu
  */
 public class MostrarArray {
+
+    /**
+     * Muestra el contenido de un array de Strings
+     * @param t 
+     */
     public static void mostrarArray (String [] t){
         for  (int i=0 ; i<t.length ; i++){
             System.out.println(t[i]);
