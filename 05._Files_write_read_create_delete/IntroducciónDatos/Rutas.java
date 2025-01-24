@@ -9,6 +9,11 @@ import java.io.File;
  * Decidí hacer dos funciones que me devolvieran un string con la ruta tanto de la carpeta como de un archivo.
  */
 public class Rutas {
+
+    /**
+     * Obtengo la ruta de la carpeta "ARCHIVOS"
+     * @return 
+     */
     public static String rutaCarpetaArchivos (){
         String rutaProyecto = System.getProperty("user.dir");
         String sep = File.separator;
@@ -16,8 +21,13 @@ public class Rutas {
         
         return rutaCarpeta;
     }
-    
-    public static String rutaArchivo(String texto){     //En este caso pido que se escriba el nombre que se le quiere dar como ruta despues del separador
+
+    /**
+     * Obtengo ruta de un archivo en concreto dentro de la carpeta "Archivos"
+     * @param texto
+     * @return 
+     */
+    public static String rutaArchivo(String texto){     
         String r = rutaCarpetaArchivos();
         String sep = File.separator;
         String rutaArchivo = r + sep + texto;
