@@ -1,7 +1,3 @@
-ue
-package Actividad4;
-
-
 import static IntroducciónDatos.IntroduccionDatos.numeroEntreDosOpciones;   //Importo del paquete propio
 import static MostrarPorConsola.Menues.menuGeneral;                         //Importo del paquete propio
 import static MostrarPorConsola.MostrarArray.mostrarArray;                  //Importo del paquete propio
